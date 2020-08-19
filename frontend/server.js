@@ -13,9 +13,9 @@ const path = require('path');
 const app = express();
 
 var distDir = __dirname + "/dist/";
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/home'));
 app.use(express.static(distDir));
-const port = process.env.PORT || 3333; //add your port no. here
+const port = process.env.PORT || 8080; //add your port no. here
 
 // // Serve only the static files form the dist directory
 // app.use(express.static(__dirname + 'https://ataka-organix.herokuapp.com/'));
