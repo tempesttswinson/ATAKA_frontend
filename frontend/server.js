@@ -1,16 +1,29 @@
 //Install express server
-const express = require('express');
-const path = require('path');
+// const express = require('express');
+// const path = require('path');
 
+// const app = express();
+
+const express = require("express");
+const bodyparser = require("body-parser");
+const cors = require("cors");
+const db = require('./query');
+//our all the query connections are there in query.js
+const path = require('path');
 const app = express();
 
-// Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/<name-of-app>'));
+var distDir = __dirname + "/dist/";
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(distDir));
+const port = process.env.PORT || 3333; //add your port no. here
 
-app.get('/*', function (req, res) {
+// // Serve only the static files form the dist directory
+// app.use(express.static(__dirname + 'https://ataka-organix.herokuapp.com/'));
 
-    res.sendFile(path.join(__dirname + '/dist/<name-of-app>/index.html'));
-});
+// app.get('/*', function (req, res) {
 
-// Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+//     res.sendFile(path.join(__dirname + 'https://ataka-organix.herokuapp.com/'));
+// });
+
+// // Start the app by listening on the default Heroku port
+// app.listen(process.env.PORT || 8080);
